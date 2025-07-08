@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Contracts\Role;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('test', function () {
+    return view('frond.index');
 });
 
 Route::get('/dashboard', function () {
