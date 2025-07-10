@@ -8,7 +8,13 @@
 
     <title>{{ $title ?? 'arsip' }}</title>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
+    {{-- ? CSS file build --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-B_jRX8Sy.css') }}">
+
+    {{-- ? JavaScript file build --}}
+    <script src="{{ asset('build/assets/app-DaBYqt0m.js') }}" defer></script>
 
     {{-- ? Style tambahan khusus halaman --}}
     {{ $myStyle ?? '' }}

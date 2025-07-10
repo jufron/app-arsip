@@ -12,6 +12,10 @@ Route::get('test', function () {
     return view('frond.index');
 });
 
+Route::get('test2', function () {
+    return view('dashboard.index');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
