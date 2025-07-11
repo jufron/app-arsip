@@ -132,7 +132,7 @@
             </li> --}}
 
             {{-- ? notification --}}
-            {{-- <li class="nav-item topbar-icon dropdown hidden-caret">
+            <li class="nav-item topbar-icon dropdown hidden-caret">
                 <a
                     class="nav-link dropdown-toggle"
                     href="#"
@@ -202,7 +202,7 @@
                         </a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
 
             {{-- ?profile --}}
             <li class="nav-item topbar-user dropdown hidden-caret">
@@ -219,7 +219,7 @@
                         loading="lazy"
                     />
                     </div>
-                    <span class="profile-username"><span class="op-7">Hi,</span><span class="fw-bold">Hizrian</span></span>
+                    <span class="profile-username"><span class="op-7">Hi,</span><span class="fw-bold">@auth {{ auth()->user()->name }} @else Guest @endauth</span></span>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">
@@ -233,8 +233,8 @@
                                     />
                                 </div>
                                 <div class="u-text">
-                                    <h4>Hizrian</h4>
-                                    <p class="text-muted">hello@example.com</p>
+                                    <h4>@auth {{ auth()->user()->name }} @else Guest @endauth</h4>
+                                    <p class="text-muted">@auth {{ auth()->user()->email }} @else Guest @endauth</p>
                                 </div>
                             </div>
                         </li>

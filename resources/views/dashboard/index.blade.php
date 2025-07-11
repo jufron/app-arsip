@@ -9,218 +9,11 @@
             <h1 class="fw-bold mb-3 text-uppercase">Dashboard</h1>
         </div>
     </div>
-    {{-- ? mini card --}}
-    <div class="row">
-        {{-- ? count kategory berita --}}
-        <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
-          <div class="card">
-            <div class="card-body p-3 text-center">
-              {{-- <div class="h1 m-0">{{ $kategory }}</div> --}}
-              <div class="text-muted mb-3">Kategori Berita</div>
-            </div>
-          </div>
-        </div>
-        {{-- ? count foto galeri --}}
-        <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
-          <div class="card">
-            <div class="card-body p-3 text-center">
-              <div class="h1 m-0">17</div>
-              <div class="text-muted mb-3">Foto Galeri</div>
-            </div>
-          </div>
-        </div>
-        {{-- ? count guru & staf --}}
-        <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
-          <div class="card">
-            <div class="card-body p-3 text-center">
-              <div class="h1 m-0">15</div>
-              <div class="text-muted mb-3">Guru & Staf</div>
-            </div>
-          </div>
-        </div>
-        {{-- ? count siswa prestasi --}}
-        <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
-          <div class="card">
-            <div class="card-body p-3 text-center">
-              <div class="h1 m-0">15</div>
-              <div class="text-muted mb-3">Siswa Prestasi</div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    {{-- todo count beita --}}
-    <div class="row row-card-no-pd">
-        {{-- ? count all berita --}}
-        <div class="col-sm-6 col-md-4">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-newspaper text-primary"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Total Berita</p>
-                                {{-- <h4 class="card-title">{{ $berita }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- ? count berita publish --}}
-        <div class="col-sm-6 col-md-4">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-newspaper text-success"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Berita Publish</p>
-                                {{-- <h4 class="card-title">{{ $berita_publish }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- ? count berita draft --}}
-        <div class="col-sm-6 col-md-4">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-newspaper text-danger"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Berita Draft</p>
-                                {{-- <h4 class="card-title">{{ $berita_draft }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- todo count testimoni --}}
-    <div class="row row-card-no-pd">
-        {{-- ? count all testimoni --}}
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-comments text-primary"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Total Testimoni</p>
-                                {{-- <h4 class="card-title">{{ $testimoni }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- ? count testimoni masuk bulan --}}
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-comments text-info"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Testimoni Masuk</p>
-                                {{-- <h4 class="card-title">{{ $testimoni_where_month }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- ? count testimoni publish --}}
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-comments text-success"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Testimoni Publish</p>
-                                {{-- <h4 class="card-title">{{ $testimoni__publish }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- ? count testimoni draft --}}
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-comments text-danger"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Testimoni Draft</p>
-                                {{-- <h4 class="card-title">{{ $testimoni_draft }}</h4> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     {{-- todo count ppdb --}}
     <div class="row">
-        {{-- ? count all ppdb --}}
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-primary card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-users"></i>
-                            </div>
-                        </div>
-                        <div class="col-7 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Seluruh PPDB</p>
-                                <h4 class="card-title">20</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- ? count ppdb gelombang 1 --}}
-        <div class="col-sm-6 col-md-3">
+        {{-- ? count petugas --}}
+        <div class="col-sm-6 col-md-4">
             <div class="card card-stats card-info card-round">
                 <div class="card-body">
                     <div class="row">
@@ -231,7 +24,7 @@
                         </div>
                         <div class="col-7 col-stats">
                             <div class="numbers">
-                                <p class="card-category">PPDB Gelombang 1</p>
+                                <p class="card-category">Total Petugas</p>
                                 <h4 class="card-title">14</h4>
                             </div>
                         </div>
@@ -239,8 +32,8 @@
                 </div>
             </div>
         </div>
-        {{-- ? count ppdb gelombang 2 --}}
-        <div class="col-sm-6 col-md-3">
+        {{-- ? count pemohon --}}
+        <div class="col-sm-6 col-md-4">
             <div class="card card-stats card-success card-round">
                 <div class="card-body">
                     <div class="row">
@@ -251,7 +44,7 @@
                         </div>
                         <div class="col-7 col-stats">
                             <div class="numbers">
-                                <p class="card-category">PPDB Gelombang 2</p>
+                                <p class="card-category">Total Pemohon</p>
                                 <h4 class="card-title">16</h4>
                             </div>
                         </div>
@@ -259,8 +52,8 @@
                 </div>
             </div>
         </div>
-        {{-- ? count ppdb gelombang 3 --}}
-        <div class="col-sm-6 col-md-3">
+        {{-- ? count arsip --}}
+        <div class="col-sm-6 col-md-4">
             <div class="card card-stats card-secondary card-round">
                 <div class="card-body">
                     <div class="row">
@@ -271,7 +64,7 @@
                         </div>
                         <div class="col-7 col-stats">
                             <div class="numbers">
-                                <p class="card-category">PPDB Gelombang 3</p>
+                                <p class="card-category">Total Arsip</p>
                                 <h4 class="card-title">32</h4>
                             </div>
                         </div>

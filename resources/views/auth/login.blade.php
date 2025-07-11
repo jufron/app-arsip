@@ -46,7 +46,6 @@
     </form>
 </x-guest-layout> --}}
 
-
 <x-layouts.frond.app title="login">
     <x-slot:myStyle>
         <style>
@@ -68,7 +67,7 @@
                 </div>
                 <h2 class="text-3xl font-extrabold mb-2 text-center text-indigo-700">Login</h2>
                 <p class="text-center text-gray-500 mb-8">Masuk ke akun Anda</p>
-                <form method="POST" action="{{ route('login') }}" class="space-y-5">
+                <form method="POST" action="" class="space-y-5">
                     @csrf
                     <div>
                         <label for="username" class="block text-gray-700 text-sm font-semibold mb-1">Username</label>
@@ -78,23 +77,35 @@
                                     <path d="M16 12H8m8 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0z" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </span>
-                            <input id="username" type="text" name="username" value="{{ old('username') }}" required autofocus autocomplete="username"
-                                class="pl-10 pr-4 py-2 w-full rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition outline-none text-gray-700 bg-gray-50 shadow-sm">
+                            <input
+                                id="username"
+                                type="text"
+                                name="username"
+                                value="{{ old('username') }}"
+                                autofocus autocomplete="username"
+                                class="pl-10 pr-4 py-2 w-full rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition outline-none text-gray-700 bg-gray-50 shadow-sm"
+                            />
                         </div>
                         @error('username')
                             <span class="text-red-500 text-xs mt-1">{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
-                        <label for="password" class="block text-gray-700 text-sm font-semibold mb-1">NIK</label>
+                        <label
+                        for="password" class="block text-gray-700 text-sm font-semibold mb-1">NIK</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                                 <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6-6V9a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </span>
-                            <input id="password" type="password" name="password" required autocomplete="current-password"
-                                class="pl-10 pr-4 py-2 w-full rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition outline-none text-gray-700 bg-gray-50 shadow-sm">
+                            <input
+                                id="password"
+                                type="password"
+                                name="password"
+                                autocomplete="current-password"
+                                class="pl-10 pr-4 py-2 w-full rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition outline-none text-gray-700 bg-gray-50 shadow-sm"
+                            >
                         </div>
                         @error('password')
                             <span class="text-red-500 text-xs mt-1">{{ $message }}</span>

@@ -10,7 +10,7 @@
                 {{-- ? dashboard --}}
                 <li @class([
                     'nav-item',
-                    // 'active' => request()->routeIs('dashboard')
+                    'active' => request()->routeIs('dashboard')
                 ])>
                     <a href="{{ route('dashboard') }}">
                         <i class="fas fa-home"></i>
