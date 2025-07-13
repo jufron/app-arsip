@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 
 class MakeService extends Command
 {
@@ -30,7 +31,25 @@ class MakeService extends Command
      */
     public function handle()
     {
-        //
+        $name = $this->argument('name');
+
+        // Paths
+        $servicePath = app_path("Services/{$name}/{$name}Service.php");
+        $serviceContractPath = app_path("Services/{$name}/{$name}ServiceInterface.php");
+
+        $filesystem = new Filesystem();
+
+        // Create directories if not exist
+        $filesystem->ensureDirectoryExists(dirname($servicePath));
+        $filesystem->ensureDirectoryExists(dirname($serviceContractPath));
+
+        $filesystem->put($servicePath, $this->getServiceTemplate($name));
+        $this->info("Service created: {$servicePath}");
+
+        $filesystem->put($serviceContractPath, $this->getServiceContractTemplate($name));
+        $this->info("Service Contract created: {$serviceContractPath}");
+
+        $this->info("✅ {$name}Service and {$name}Repository successfully created and registered!");
     }
 
     protected function getServiceTemplate($name)

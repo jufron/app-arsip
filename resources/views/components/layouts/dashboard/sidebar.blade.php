@@ -19,17 +19,48 @@
                 </li>
 
                 <li class="nav-section">
-                    <h4 class="text-section">Umum</h4>
+                    <h4 class="text-section">Menu</h4>
                 </li>
 
-                {{-- ? pegawai --}}
+                {{-- ? petugas --}}
+                <li @class([
+                    'nav-item',
+                    'active' => request()->routeIs('dashboard.petugas.*')
+                ])>
+                    <a href="{{ route('dashboard.petugas.index') }}">
+                        <i class="fas fa-users"></i>
+                        <p>Petugas</p>
+                    </a>
+                </li>
+
+                {{-- ? Pemohon --}}
                 <li @class([
                     'nav-item',
                     // 'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
                 ])>
                     <a href="">
-                        <i class="fas fa-th-list"></i>
-                        <p>Pegawai</p>
+                        <i class="fas fa-user-friends"></i>
+                        <p>Pemohon</p>
+                    </a>
+                </li>
+                {{-- ? arsip --}}
+                <li @class([
+                    'nav-item',
+                    // 'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
+                ])>
+                    <a href="">
+                        <i class="far fa-newspaper"></i>
+                        <p>Arsip</p>
+                    </a>
+                </li>
+                {{-- ? log aktifitas --}}
+                <li @class([
+                    'nav-item',
+                    // 'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
+                ])>
+                    <a href="">
+                        <i class="fas fa-cogs"></i>
+                        <p>Log Aktifitas</p>
                     </a>
                 </li>
 
@@ -78,10 +109,6 @@
                     ]"
                 /> --}}
 
-                <li class="nav-section">
-                    <h4 class="text-section">Akademik</h4>
-                </li>
-
                 {{-- ? akademik --}}
                 {{-- <x-dashboard.linkMenu-dropdown
                     id="akademik"
@@ -125,44 +152,6 @@
                                 'dashboard.siswa-berprestasi.edit',
                             ]
                         ]
-                    ]"
-                /> --}}
-
-                <li class="nav-section">
-                    <h4 class="text-section">Peserta Didik Baru</h4>
-                </li>
-
-                {{-- ? ppdb --}}
-                {{-- <x-dashboard.linkMenu-dropdown
-                    id="ppdb"
-                    title="PPDB"
-                    :routes="[
-                        'dashboard.penerimaan-peserta-didik-baru.index',
-                        'dashboard.penerimaan-peserta-didik-baru.create',
-                        'dashboard.penerimaan-peserta-didik-baru.edit',
-                        'dashboard.daftar-pertanyaan-ppdb.index',
-                        'dashboard.daftar-pertanyaan-ppdb.create',
-                        'dashboard.daftar-pertanyaan-ppdb.edit',
-                    ]"
-                    :items="[
-                        [
-                            'label' => 'Daftar Siswa Baru',
-                            'route' => 'dashboard.penerimaan-peserta-didik-baru.index',
-                            'routes' => [
-                                'dashboard.penerimaan-peserta-didik-baru.index',
-                                'dashboard.penerimaan-peserta-didik-baru.create',
-                                'dashboard.penerimaan-peserta-didik-baru.edit'
-                            ]
-                        ],
-                        [
-                            'label' => 'Pertanyaan PPDB',
-                            'route' => 'dashboard.daftar-pertanyaan-ppdb.index',
-                            'routes' => [
-                                'dashboard.daftar-pertanyaan-ppdb.index',
-                                'dashboard.daftar-pertanyaan-ppdb.create',
-                                'dashboard.daftar-pertanyaan-ppdb.edit'
-                            ]
-                        ],
                     ]"
                 /> --}}
 
