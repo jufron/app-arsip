@@ -36,9 +36,9 @@
                 {{-- ? Pemohon --}}
                 <li @class([
                     'nav-item',
-                    // 'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
+                    'active' => request()->routeIs('dashboard.pemohon.*')
                 ])>
-                    <a href="">
+                    <a href="{{ route('dashboard.pemohon.index') }}">
                         <i class="fas fa-user-friends"></i>
                         <p>Pemohon</p>
                     </a>

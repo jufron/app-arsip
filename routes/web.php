@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Frond\FrondPagesController;
-use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PemohonController;
 use App\Http\Controllers\Dashboard\PetugasController;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 Route::get('/', [FrondPagesController::class, 'index'])->name('welcome');
 
@@ -17,6 +18,10 @@ Route::middleware('auth')->prefix('dashboard')->group( function () {
             ->names('dashboard.petugas')
             ->except(['edit', 'update'])
             ->parameters(['petugas' => 'user']);
+
+    Route::get('pemohon/fetch', [PemohonController::class, 'getLatest'])->name('dashboard.pemohon.fetch');
+    Route::resource('pemohon', PemohonController::class)
+            ->names('dashboard.pemohon');
 });
 
 // Route::middleware('auth')->group(function () {

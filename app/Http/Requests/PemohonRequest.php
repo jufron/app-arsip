@@ -22,7 +22,10 @@ class PemohonRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nik'                   => ['required', 'string', 'max:16'],
+            'nama'                  => ['required', 'string', 'max:255'],
+            'jenis_pengurusan'      => ['required', 'string', 'in:KTP baru,Rusak,Hilang,Lainya'],
+            'tanggal_pengurusan'    => ['required', 'date'],
         ];
     }
 }
