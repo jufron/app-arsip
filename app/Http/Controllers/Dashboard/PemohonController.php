@@ -15,6 +15,18 @@ use App\Services\Pemohon\PemohonServiceInterface;
 class PemohonController extends Controller
 {
     /**
+     * Jenis pengurusan yang tersedia.
+     *
+     * @var array
+     */
+    protected array $jenisPengurusan = [
+        'KTP baru',
+        'Rusak',
+        'Hilang',
+        'Lainya'
+    ];
+
+    /**
      * Create a new controller instance.
      *
      * @param PemohonServiceInterface $pemohonService
@@ -29,7 +41,7 @@ class PemohonController extends Controller
     public function index() : View
     {
         return view('dashboard.pemohon.pemohon', [
-            'jenis_pengurusan'  => ['KTP baru', 'Rusak', "Hilang", "Lainya"]
+            'jenis_pengurusan'  => $this->jenisPengurusan,
         ]);
     }
 
@@ -46,7 +58,9 @@ class PemohonController extends Controller
      */
     public function create()
     {
-        return view('dashboard.pemohon.tambah');
+        return view('dashboard.pemohon.tambah', [
+            'jenis_pengurusan' => $this->jenisPengurusan,
+        ]);
     }
 
     /**
@@ -72,7 +86,10 @@ class PemohonController extends Controller
      */
     public function edit(Pemohon $pemohon)
     {
-        //
+        return view('dashboard.pemohon.ubah', [
+            'pemohon' => $pemohon,
+            'jenis_pengurusan' => $this->jenisPengurusan,
+        ]);
     }
 
     /**

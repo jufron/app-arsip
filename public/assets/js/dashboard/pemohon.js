@@ -19,15 +19,15 @@ $(document).ready(function () {
             url: pemohonDatatable.attr('data-url'),
             data: function(d) {
                 // * filter data jika nanti diperlukan
-                if (inputSelectJenisPengurusan.value !== null && inputSelectJenisPengurusan.value !== '') {
-                    d.jenis_pengurusan = inputSelectJenisPengurusan.value;
-                }
-                if (inputStartDate.value !== null && inputStartDate.value !== '') {
-                    d.start_date  = inputStartDate.value;
-                }
-                if (inputEndDate.value !== null && inputEndDate.value !== '') {
-                    d.end_date  = inputEndDate.value;
-                }
+                // if (inputSelectJenisPengurusan.value !== null && inputSelectJenisPengurusan.value !== '') {
+                //     d.jenis_pengurusan = inputSelectJenisPengurusan.value;
+                // }
+                // if (inputStartDate.value !== null && inputStartDate.value !== '') {
+                //     d.start_date  = inputStartDate.value;
+                // }
+                // if (inputEndDate.value !== null && inputEndDate.value !== '') {
+                //     d.end_date  = inputEndDate.value;
+                // }
             }
         },
         columns: [

@@ -75,8 +75,7 @@
     </div>
 
     {{-- ? chart statistic --}}
-    <div class="row">
-        {{-- ? chart 1 --}}
+    {{-- <div class="row">
         <div class="col-md-8">
             <div class="card card-round">
                 <div class="card-header">
@@ -90,13 +89,12 @@
 
                         </div>
                     </div>
-                    {{-- <div id="myChartLegend"><ul class="0-legend html-legend"><li><span style="background-color:#f3545d"></span>Subscribers</li><li><span style="background-color:#fdaf4b"></span>New Visitors</li><li><span style="background-color:#177dff"></span>Active Users</li></ul></div> --}}
+                    <div id="myChartLegend"><ul class="0-legend html-legend"><li><span style="background-color:#f3545d"></span>Subscribers</li><li><span style="background-color:#fdaf4b"></span>New Visitors</li><li><span style="background-color:#177dff"></span>Active Users</li></ul></div>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">
-            {{-- ? chart 3 --}}
             <div class="card card-round">
                 <div class="card-header">
                     <div class="card-head-row">
@@ -112,7 +110,6 @@
         </div>
 
         <div class="col-md-4">
-            {{-- ? chart 2 --}}
             <div class="card card-round">
                 <div class="card-header">
                     <div class="card-head-row">
@@ -127,7 +124,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
     {{-- * my script --}}
     <x-slot:myScript>

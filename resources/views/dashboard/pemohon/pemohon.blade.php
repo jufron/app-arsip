@@ -22,33 +22,33 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <x-dashboard.input-select label="Jenis Pengurusan" name="jenis_pengurusan">
                         @foreach ($jenis_pengurusan as $value )
                             <option value="{{ $value }}">{{ $value }}</option>
                         @endforeach
                     </x-dashboard.input-select>
-                </div>
+                </div> --}}
                 {{-- ? start date --}}
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <x-dashboard.input
                         label="Tanggal Awal"
                         type="date"
                         name="start_date"
                     />
-                </div>
+                </div> --}}
                 {{-- ? end date --}}
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <x-dashboard.input
                         label="Tanggal Akhir"
                         type="date"
                         name="end_date"
                     />
-                </div>
+                </div> --}}
             </div>
             <div class="my-4">
                 <a href="{{ route('dashboard.pemohon.create') }}" class="btn btn-success">Tambah Pemohon Baru</A>
-                <button id="button-filter-reset" class="btn btn-secondary">Reset Filter</button>
+                {{-- <button id="button-filter-reset" class="btn btn-secondary">Reset Filter</button> --}}
             </div>
 
             <div class="table-responsive">
