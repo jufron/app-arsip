@@ -28,4 +28,20 @@ class PemohonRequest extends FormRequest
             'tanggal_pengurusan'    => ['required', 'date'],
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'nik.required'                  => 'NIK wajib diisi.',
+            'nik.string'                    => 'NIK harus berupa string.',
+            'nik.max'                       => 'NIK tidak boleh lebih dari 16 karakter.',
+            'nama.required'                 => 'Nama Pemohon wajib diisi.',
+            'nama.string'                   => 'Nama Pemohon harus berupa string.',
+            'nama.max'                      => 'Nama Pemohon tidak boleh lebih dari 255 karakter.',
+            'jenis_pengurusan.required'     => 'Jenis pengurusan wajib dipilih.',
+            'jenis_pengurusan.in'           => 'Jenis pengurusan tidak valid.',
+            'tanggal_pengurusan.required'   => 'Tanggal pengurusan wajib diisi.',
+            'tanggal_pengurusan.date'       => 'Tanggal pengurusan harus berupa tanggal yang valid.',
+        ];
+    }
 }

@@ -26,8 +26,8 @@
                     <div class="col-md-4">
                         <x-dashboard.input
                             label="Nama Lengkap Pemohon"
-                            name="nama_pemohon"
-                            value="{{ old('nama_pemohon') }}"
+                            name="nama"
+                            value="{{ old('nama') }}"
                             placeholder="Masukan Nama Pemohon"
                         />
                     </div>

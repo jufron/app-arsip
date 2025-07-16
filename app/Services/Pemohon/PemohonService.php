@@ -119,7 +119,13 @@ class PemohonService implements PemohonServiceInterface
 
     public function updatePemohon (Pemohon $pemohon, Request $request) : void
     {
-        // Update logic here
+        $pemohon->update([
+            'nik'               => $request->nik,
+            'nama'              => $request->nama,
+            'jenis_pengurusan'  => $request->jenis_pengurusan,
+            'tanggal_pengurusan'=> $request->tanggal_pengurusan,
+            'user_id'           => auth()->id(),
+        ]);
     }
 
     public function destroyPemohon (Pemohon $pemohon) : void

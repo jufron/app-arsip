@@ -95,9 +95,11 @@ class PemohonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PemohonRequest $request, Pemohon $pemohon)
+    public function update(PemohonRequest $request, Pemohon $pemohon) : RedirectResponse
     {
-        //
+        $this->pemohonService->updatePemohon($pemohon, $request);
+        notify()->success('Data pemohon berhasil diubah', 'Sukses');
+        return redirect()->route('dashboard.pemohon.index');
     }
 
     /**
