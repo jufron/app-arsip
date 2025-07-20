@@ -25,7 +25,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category">Total Petugas</p>
-                                <h4 class="card-title">14</h4>
+                                <h4 class="card-title">{{ $petugas_count }}</h4>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category">Total Pemohon</p>
-                                <h4 class="card-title">16</h4>
+                                <h4 class="card-title">{{ $pemohon_count }}</h4>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category">Total Arsip</p>
-                                <h4 class="card-title">32</h4>
+                                <h4 class="card-title">0</h4>
                             </div>
                         </div>
                     </div>
