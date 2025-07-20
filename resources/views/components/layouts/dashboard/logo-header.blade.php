@@ -1,10 +1,10 @@
 <div class="logo-header" data-background-color="dark">
-    <a href="../index.html" class="logo">
+    <a href="{{ route('dashboard') }}" class="logo">
       <img
         src="{{ asset('img/WhatsApp Image 2025-07-10 at 20.05.25_664a2419.jpg') }}"
-        alt="navbar brand"
-        class="navbar-brand"
-        width="50"
+        alt="navbar-brand"
+        style="margin-left: 70px;"
+        width="40"
         loading="lazy"
       />
     </a>
