@@ -1,4 +1,4 @@
-<x-layouts.dashboard.app title="Ubah Data pemohon">
+<x-layouts.dashboard.app title="Ubah Data Arsip">
     {{-- * my style --}}
     <x-slot:myStyle>
 
@@ -8,10 +8,10 @@
     {{-- todo content ... --}}
     <div class="card">
         <div class="card-header">
-            <div class="card-title">Ubah Data Pemohon</div>
+            <div class="card-title">Ubah Data Arsip</div>
         </div>
 
-        <form action="{{ route('dashboard.pemohon.update', $pemohon) }}" method="post">
+        <form action="{{ route('dashboard.arsip.update', $arsip) }}" method="post">
             @method('patch')
             @csrf
             <div class="card-body">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="card-action">
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="submit" class="btn btn-success">Perbaharui</button>
             </div>
         </form>
     </div>

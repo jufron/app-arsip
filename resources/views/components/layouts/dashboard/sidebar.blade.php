@@ -46,9 +46,9 @@
                 {{-- ? arsip --}}
                 <li @class([
                     'nav-item',
-                    // 'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
+                    'active' => request()->routeIs('dashboard.arsip.*')
                 ])>
-                    <a href="">
+                    <a href="{{ route('dashboard.arsip.index') }}">
                         <i class="far fa-newspaper"></i>
                         <p>Arsip</p>
                     </a>

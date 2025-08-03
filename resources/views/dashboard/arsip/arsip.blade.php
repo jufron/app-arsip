@@ -1,4 +1,4 @@
-<x-layouts.dashboard.app title="Pemohon">
+<x-layouts.dashboard.app title="Arsip">
     {{-- * my style --}}
     <x-slot:myStyle>
         {{-- ? sweetalert 2 lib --}}
@@ -18,7 +18,7 @@
     {{-- todo content ... --}}
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Daftar Pemohon</h4>
+            <h4 class="card-title">Daftar Arsip</h4>
         </div>
         <div class="card-body">
             <div class="row">
@@ -47,7 +47,7 @@
                 </div> --}}
             </div>
             <div class="my-4">
-                <a href="{{ route('dashboard.pemohon.create') }}" class="btn btn-success">Tambah Pemohon Baru</A>
+                <a href="{{ route('dashboard.arsip.create') }}" class="btn btn-success">Tambah Arsip Baru</A>
                 {{-- <button id="button-filter-reset" class="btn btn-secondary">Reset Filter</button> --}}
             </div>
 
@@ -59,30 +59,36 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <table
-                                id="pemohon-datatable"
+                                id="arsip-datatable"
                                 class="display table table-striped table-hover dataTable"
                                 role="grid"
-                                data-url="{{ route('dashboard.pemohon.fetch') }}"
+                                data-url="{{ route('dashboard.arsip.fetch') }}"
                                 >
                                 <thead>
                                     <tr role="row">
                                         <th style="width: 20%;">No</th>
-                                        <th style="width: 100%;">NIK</th>
                                         <th style="width: 100%;">Nama Pemohon</th>
-                                        <th style="width: 50px;">Jenis Pengurusan</th>
                                         <th style="width: 50px;">Tanggal Pengurusan</th>
-                                        <th style="width: 100px">nama Pengurus/Pegawai</th>
+                                        <th style="width: 50px;">Tanggal Arsip</th>
+                                        <th style="width: 50px;">Ruangan</th>
+                                        <th style="width: 50px;">Lemari</th>
+                                        <th style="width: 50px;">Rak</th>
+                                        <th style="width: 50px;">Laci</th>
+                                        <th style="width: 50px;">Box</th>
                                         <th style="width: 120px;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr role="row">
                                         <th style="width: 20%;">No</th>
-                                        <th style="width: 100%;">NIK</th>
                                         <th style="width: 100%;">Nama Pemohon</th>
-                                        <th style="width: 50px;">Jenis Pengurusan</th>
                                         <th style="width: 50px;">Tanggal Pengurusan</th>
-                                        <th style="width: 100px">nama Pengurus/Pegawai</th>
+                                        <th style="width: 50px;">Tanggal Arsip</th>
+                                        <th style="width: 50px;">Ruangan</th>
+                                        <th style="width: 50px;">Lemari</th>
+                                        <th style="width: 50px;">Rak</th>
+                                        <th style="width: 50px;">Laci</th>
+                                        <th style="width: 50px;">Box</th>
                                         <th style="width: 120px;">Aksi</th>
                                     </tr>
                                 </tfoot>
@@ -102,14 +108,18 @@
 
     {{-- * my script --}}
     <x-slot:myScript>
+
         {{-- ? Datatables --}}
         <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
+
         {{-- ? sweatalert 2 lib --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         {{-- ? toastify library  --}}
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
         {{-- ? myscript --}}
-        <script type="module" src="{{ asset('assets/js/dashboard/pemohon.js') }}"></script>
+        <script type="module" src="{{ asset('assets/js/dashboard/arsip.js') }}"></script>
     </x-slot:myScript>
     {{-- * my script --}}
 </x-layouts.dashboard>

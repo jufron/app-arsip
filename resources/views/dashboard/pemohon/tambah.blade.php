@@ -1,4 +1,4 @@
-<x-layouts.dashboard.app title="Tambah Petugas Baru">
+<x-layouts.dashboard.app title="Tambah Pemohon Baru">
     {{-- * my style --}}
     <x-slot:myStyle>
 

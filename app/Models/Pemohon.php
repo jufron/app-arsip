@@ -24,4 +24,9 @@ class Pemohon extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function arsip()
+    {
+        return $this->hasOne(Arsip::class, 'dokumen_pemohon_id');
+    }
 }

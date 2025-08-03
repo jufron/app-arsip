@@ -23,6 +23,9 @@
         @isset($placeholder)
         placeholder="{{ $placeholder }}"
         @endisset
+        @if (isset($disable) && $disable === 'true')
+        disabled
+        @endif
         >
     @error($name)
     <small class="invalid-feedback">{{ $message }}</small>

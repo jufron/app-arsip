@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Frond\FrondPagesController;
 use App\Http\Controllers\Dashboard\PemohonController;
@@ -22,6 +23,11 @@ Route::middleware('auth')->prefix('dashboard')->group( function () {
     Route::get('pemohon/fetch', [PemohonController::class, 'getLatest'])->name('dashboard.pemohon.fetch');
     Route::resource('pemohon', PemohonController::class)
             ->names('dashboard.pemohon');
+
+    Route::get('arsip/fetch', [ArsipController::class, 'getLatest'])->name('dashboard.arsip.fetch');
+    Route::get('pemohon/get/{pemohon}', [ArsipController::class, 'getPemohon'])->name('dashboard.pemohon.get');
+    Route::resource('arsip', ArsipController::class)
+            ->names('dashboard.arsip');
 });
 
 // Route::middleware('auth')->group(function () {

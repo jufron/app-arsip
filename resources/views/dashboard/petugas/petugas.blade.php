@@ -1,4 +1,4 @@
-<x-layouts.dashboard.app title="Kategory">
+<x-layouts.dashboard.app title="petugas">
     {{-- * my style --}}
     <x-slot:myStyle>
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
