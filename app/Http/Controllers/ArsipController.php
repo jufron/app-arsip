@@ -15,7 +15,7 @@ use App\Services\Pemohon\PemohonServiceInterface;
 class ArsipController extends Controller
 {
     private array $number = [
-        1,2,3,4,5
+        1,2,3,4,5,6,7,8,9,10,
     ];
 
     public function __construct(
@@ -60,7 +60,6 @@ class ArsipController extends Controller
     public function store(ArsipRequest $request) : RedirectResponse
     {
         $this->arsipService->storeArsip($request);
-        notify()->success('Data Arsip berhasil ditambahkan', 'Sukses');
         return redirect()->route('dashboard.arsip.index');
     }
 

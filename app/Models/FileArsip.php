@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class FileArsip extends Model
 {
-    protected $table = 'arsip_file';
+    use HasFactory;
+
+    protected $table = 'file_arsip';
 
     protected $fillable = [
         'dokument_arsip_id',

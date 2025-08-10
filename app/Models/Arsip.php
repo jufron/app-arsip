@@ -30,7 +30,7 @@ class Arsip extends Model
         return $this->belongsTo(Pemohon::class, 'dokumen_pemohon_id');
     }
 
-    public function fileArsip() : HasMany
+    public function files() : HasMany
     {
         return $this->hasMany(FileArsip::class, 'dokument_arsip_id');
     }

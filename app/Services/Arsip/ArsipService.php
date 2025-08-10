@@ -5,8 +5,11 @@ namespace App\Services\Arsip;
 use Carbon\Carbon;
 use App\Models\Arsip;
 use App\Models\Pemohon;
+use App\Models\FileArsip;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\EloquentDataTable;
 use App\Services\Arsip\ArsipServiceInterface;
 
@@ -70,16 +73,40 @@ class ArsipService implements ArsipServiceInterface
 
     public function storeArsip(Request $request): void
     {
-        Arsip::create([
-            'dokumen_pemohon_id'    => $request->dokumen_pemohon_id,
-            'ruangan'               => $request->ruangan,
-            'lemari'                => $request->lemari,
-            'rak'                   => $request->rak,
-            'laci'                  => $request->laci,
-            'box'                   => $request->box,
-            'keterangan'            => $request->keterangan,
-            'tanggal_arsip'         => $request->tanggal_arsip,
-        ]);
+        try {
+            DB::beginTransaction();
+
+            $arsip = Arsip::create([
+                'dokumen_pemohon_id' => $request->dokumen_pemohon_id,
+                'ruangan'            => $request->ruangan,
+                'lemari'             => $request->lemari,
+                'rak'                => $request->rak,
+                'laci'               => $request->laci,
+                'box'                => $request->box,
+                'keterangan'         => $request->keterangan,
+                'tanggal_arsip'      => $request->tanggal_arsip,
+            ]);
+
+            $resultFileSStore = [];
+
+            foreach ($request->file('files') as $file) {
+                $resultFileSStore[] = $file->store('arsip', 'public');
+            }
+
+            foreach ($resultFileSStore as $file) {
+                $arsip->files()->create([
+                    'nama_file' => $file,
+                ]);
+            }
+
+            DB::commit();
+            notify()->success('Data Arsip berhasil ditambahkan', 'Sukses');
+
+        } catch (\Exception $th) {
+            DB::rollBack();
+            Log::error('Error storing Arsip: ' . $th->getMessage());
+            notify()->error('Data Arsip gagal ditambahkan', 'Gagal');
+        }
     }
 
     public function showArsip(Arsip $arsip): JsonResponse
