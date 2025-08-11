@@ -26,8 +26,9 @@ Route::middleware('auth')->prefix('dashboard')->group( function () {
 
     Route::get('arsip/fetch', [ArsipController::class, 'getLatest'])->name('dashboard.arsip.fetch');
     Route::get('pemohon/get/{pemohon}', [ArsipController::class, 'getPemohon'])->name('dashboard.pemohon.get');
-    Route::resource('arsip', ArsipController::class)
-            ->names('dashboard.arsip');
+    Route::get('fileArsip/donload/{fileArsip}', [ArsipController::class, 'donwloadFile'])->name('dashboard.fileArsip.donwload');
+    Route::delete('fileArsip/{fileArsip}', [ArsipController::class, 'destroyFile'])->name('dashboard.fileArsip.destroy');
+    Route::resource('arsip', ArsipController::class)->names('dashboard.arsip');
 });
 
 // Route::middleware('auth')->group(function () {

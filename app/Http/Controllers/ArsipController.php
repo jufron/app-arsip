@@ -6,6 +6,7 @@ use App\Models\Arsip;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\ArsipRequest;
+use App\Models\FileArsip;
 use App\Models\Pemohon;
 use Illuminate\Http\RedirectResponse;
 use App\Services\Arsip\ArsipServiceInterface;
@@ -88,7 +89,6 @@ class ArsipController extends Controller
     public function update(ArsipRequest $request, Arsip $arsip) : RedirectResponse
     {
         $this->arsipService->updateArsip($arsip, $request);
-        notify()->success('Data arsip berhasil diubah', 'Sukses');
         return redirect()->route('dashboard.arsip.index');
     }
 
@@ -100,5 +100,17 @@ class ArsipController extends Controller
         $this->arsipService->destroyArsip($arsip);
         notify()->success('Data arsip berhasil dihapus', 'Sukses');
         return redirect()->route('dashboard.arsip.index');
+    }
+
+    public function donwloadFile (FileArsip $fileArsip)
+    {
+        $this->arsipService->downloadFileArsip($fileArsip);
+    }
+
+    public function destroyFile (FileArsip $fileArsip)
+    {
+        $this->arsipService->destroyFileArsip($fileArsip);
+        notify()->success('File Arsip berhasil di hapus', 'Sukses');
+        return redirect()->route('dashboard.arsip.edit', $fileArsip->dokumentArsip);
     }
 }

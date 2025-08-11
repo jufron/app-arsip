@@ -87,11 +87,51 @@ $(document).ready(function () {
                                 Nama Pengurus/Pegawai
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-xl-6">
-                                ${data.tanggal_pengurusan}
+                                ${data.nama_petugas}
                             </div>
                         </li>
                     </ul>
-
+                    <br>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                Lokasi Arsip
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                ${data.ruangan} / ${data.lemari} / ${data.rak} / ${data.laci} / ${data.box}
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                Keterangan
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                ${data.keterangan}
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                Tanggal Arsip
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                ${data.tanggal_arsip}
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                FIle Arsip
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-xl-6">
+                                <div class="row">
+                                ${data.files.length > 0
+                                    ? data.files.map(file => `<img src="${file.url}" alt="User Photo" class="img-fluid mb-3 col-md-4" loading="lazy" width="300px"/>`).join('')
+                                    : 'Tidak ada file yang tersedia'
+                                }
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <br>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="col-6 col-sm-6 col-md-6 col-xl-6">
@@ -120,29 +160,31 @@ $(document).ready(function () {
     }); // ? end init datatable
 
     // * handle button reset
-    buttonFilterReset.addEventListener('click', function () {
-        inputSelectJenisPengurusan.value = '';
-        inputEndDate.value = '';
-        inputStartDate.value = '';
+    // buttonFilterReset.addEventListener('click', function () {
+    //     inputSelectJenisPengurusan.value = '';
+    //     inputEndDate.value = '';
+    //     inputStartDate.value = '';
 
-        datatable.ajax.reload(null, false);
-        handleToastlifyPopUp('Seluruh Filter Direset');
-    });
+    //     datatable.ajax.reload(null, false);
+    //     handleToastlifyPopUp('Seluruh Filter Direset');
+    // });
 
     // * filter handler
-    inputSelectJenisPengurusan.addEventListener('change', function () {
-        console.log(inputSelectJenisPengurusan.value, 'reload data');
-        datatable.ajax.reload(null, false);
-        handleToastlifyPopUp('Filter dengan Jenis Pengurusan');
-    });
-    inputStartDate.addEventListener('change', function () {
-        datatable.ajax.reload(null, false);
-        handleToastlifyPopUp('Filter dengan Tanggal Mulai');
-    });
-    inputEndDate.addEventListener('change', function () {
-        datatable.ajax.reload(null, false);
-        handleToastlifyPopUp('Filter dengan Tanggal Selesai');
-    });
+    // inputSelectJenisPengurusan.addEventListener('change', function () {
+    //     console.log(inputSelectJenisPengurusan.value, 'reload data');
+    //     datatable.ajax.reload(null, false);
+    //     handleToastlifyPopUp('Filter dengan Jenis Pengurusan');
+    // });
+
+    // inputStartDate.addEventListener('change', function () {
+    //     datatable.ajax.reload(null, false);
+    //     handleToastlifyPopUp('Filter dengan Tanggal Mulai');
+    // });
+
+    // inputEndDate.addEventListener('change', function () {
+    //     datatable.ajax.reload(null, false);
+    //     handleToastlifyPopUp('Filter dengan Tanggal Selesai');
+    // });
 
     // * toastify js
     function handleToastlifyPopUp (label) {

@@ -110,7 +110,7 @@ class PemohonService implements PemohonServiceInterface
             'nik'               => $pemohon->nik,
             'nama'              => $pemohon->nama,
             'jenis_pengurusan'  => $pemohon->jenis_pengurusan,
-            'tanggal_pengurusan'=> $pemohon->tanggal_pengurusan,
+            'tanggal_pengurusan'=> $pemohon->tanggal_pengurusan_format,
             'nama_petugas'      => $pemohon->user->nama_petugas,
             'created_at'        => $pemohon->created_at_format,
             'updated_at'        => $pemohon->updated_at_format

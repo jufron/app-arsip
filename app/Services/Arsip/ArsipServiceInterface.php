@@ -3,6 +3,7 @@
 namespace App\Services\Arsip;
 
 use App\Models\Arsip;
+use App\Models\FileArsip;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
@@ -19,4 +20,8 @@ interface ArsipServiceInterface
     public function updateArsip(Arsip $arsip, Request $request) : void;
 
     public function destroyArsip(Arsip $arsip) : void;
+
+    public function downloadFileArsip (FileArsip $fileArsip);
+
+    public function destroyFileArsip (FileArsip $fileArsip) : void;
 }

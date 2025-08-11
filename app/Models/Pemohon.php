@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use App\Traits\DateFormatCreatedAtAndUpdatedAt;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\DateFormatCreatedAtAndUpdatedAt;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pemohon extends Model
 {
@@ -20,6 +22,14 @@ class Pemohon extends Model
         'user_id',
     ];
 
+    protected function tanggalPengurusanFormat() : Attribute
+    {
+        return Attribute::make(
+            get: fn () => Carbon::parse($this->tanggal_pengurusan)->format('d F Y'),
+        );
+    }
+
+    // ? relation
     public function user()
     {
         return $this->belongsTo(User::class);

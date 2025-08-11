@@ -27,9 +27,7 @@ class ArsipRequest extends FormRequest
     {
         $numberPattern = implode('|', $this->number); // = 1|2|3|4|5|6|7|8|9|10
 
-        return [
-            'dokumen_pemohon_id' => ['required', 'exists:dokumen_pemohon,id'],
-            'files'              => ['required'],
+        $rules = [
             'files.*'            => ['file', 'mimes:pdf,jpg,png', 'max:10048'],
             'ruangan'            => ['required', 'string', 'max:200', "regex:/^ruangan\s($numberPattern)$/i"],
             'lemari'             => ['required', 'string', 'max:200', "regex:/^lemari\s($numberPattern)$/i"],
@@ -39,6 +37,15 @@ class ArsipRequest extends FormRequest
             'keterangan'         => ['nullable', 'string', 'max:200'],
             'tanggal_arsip'      => ['required', 'date'],
         ];
+
+        if($this->isMethod('post')) {
+            $rules['files']                 = ['required', 'array', 'min:1'];
+            $rules['dokumen_pemohon_id']    = ['required', 'exists:dokumen_pemohon,id'];
+        } else {
+            $rules['files'] = ['nullable', 'array'];
+        }
+
+        return $rules;
     }
 
     public function messages() : array
@@ -56,6 +63,11 @@ class ArsipRequest extends FormRequest
             'box.required'                => 'Box harus diisi.',
             'box.regex'                   => 'Format box harus seperti: box 1 s/d box ' . max($this->number),
             'tanggal_arsip.required'      => 'Tanggal arsip harus diisi.',
+            'files.required'              => 'File lampiran wajib diunggah saat membuat data baru.',
+            'files.array'                 => 'Format file tidak sesuai, pastikan mengunggah beberapa file sekaligus.',
+            'files.*.file'                => 'Setiap file yang diunggah harus berupa file yang valid.',
+            'files.*.mimes'               => 'File harus berformat PDF, JPG, atau PNG.',
+            'files.*.max'                 => 'Ukuran setiap file maksimal 10 MB.'
         ];
     }
 }

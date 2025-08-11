@@ -84,11 +84,11 @@ $(document).ready(function () {
                                 Nama Pengurus/Pegawai
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-xl-6">
-                                ${data.tanggal_pengurusan}
+                                ${data.nama_petugas}
                             </div>
                         </li>
                     </ul>
-
+                    <br>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="col-6 col-sm-6 col-md-6 col-xl-6">

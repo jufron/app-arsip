@@ -101,7 +101,7 @@
     </div>
 
     {{-- ? modal --}}
-    <x-dashboard.modal modalLabel="Detail Kategory" />
+    <x-dashboard.modal modalLabel="Detail Kategory" modalSize="lg" />
     {{-- ? modal --}}
 
     {{-- todo content ... --}}
