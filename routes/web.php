@@ -7,6 +7,7 @@ use App\Http\Controllers\Frond\FrondPagesController;
 use App\Http\Controllers\Dashboard\PemohonController;
 use App\Http\Controllers\Dashboard\PetugasController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\LogProsesController;
 
 Route::get('/', [FrondPagesController::class, 'index'])->name('welcome');
 
@@ -14,6 +15,7 @@ require __DIR__.'/auth.php';
 
 Route::middleware('auth')->prefix('dashboard')->group( function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/count', [DashboardController::class, 'statisticCount'])->name('dashboard.statistick');
 
     Route::resource('petugas', PetugasController::class)
             ->names('dashboard.petugas')
@@ -29,6 +31,10 @@ Route::middleware('auth')->prefix('dashboard')->group( function () {
     Route::get('fileArsip/donload/{fileArsip}', [ArsipController::class, 'donwloadFile'])->name('dashboard.fileArsip.donwload');
     Route::delete('fileArsip/{fileArsip}', [ArsipController::class, 'destroyFile'])->name('dashboard.fileArsip.destroy');
     Route::resource('arsip', ArsipController::class)->names('dashboard.arsip');
+
+    Route::get('log-aktifitas', [LogProsesController::class, 'index'])->name('dashboard.log-aktifitas.index');
+    Route::get('log-aktifitas/fetch', [LogProsesController::class, 'getLatest'])->name('dashboard.log-aktifitas.fetch');
+    ROute::get('log-aktifitas/{logProses}', [LogProsesController::class, 'show'])->name('dashboard.log-aktifitas.show');
 });
 
 // Route::middleware('auth')->group(function () {

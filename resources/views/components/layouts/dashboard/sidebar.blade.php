@@ -56,9 +56,9 @@
                 {{-- ? log aktifitas --}}
                 <li @class([
                     'nav-item',
-                    // 'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
+                    'active' => request()->routeIs('dashboard.log-aktifitas.*')
                 ])>
-                    <a href="">
+                    <a href="{{ route('dashboard.log-aktifitas.index') }}">
                         <i class="fas fa-cogs"></i>
                         <p>Log Aktifitas</p>
                     </a>

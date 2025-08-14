@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
+use Illuminate\Database\Eloquent\Builder;
 use App\Services\Arsip\ArsipServiceInterface;
 
 class ArsipService implements ArsipServiceInterface
@@ -57,7 +58,10 @@ class ArsipService implements ArsipServiceInterface
         ->filter( function ($query) {
             // * search nama pemohon or nik
             if (request()->has('search') && request('search')['value'] !== '') {
-                $query->where('ruangan', 'like', "%".request('search')['value']."%")
+                $query->whereHas('dokumenPemohon', function (Builder $query) {
+                        $query->where('nama', 'like', "%".request('search')['value']."%");
+                    })
+                      ->orWhere('ruangan', 'like', "%".request('search')['value']."%")
                       ->orWhere('lemari', 'like', "%".request('search')['value']."%")
                       ->orWhere('rak', 'like', "%".request('search')['value']."%")
                       ->orWhere('laci', 'like', "%".request('search')['value']."%")

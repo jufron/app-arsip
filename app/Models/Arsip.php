@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Support\Carbon;
+use App\Observers\ArsipObserver;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\DateFormatCreatedAtAndUpdatedAt;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 
+#[ObservedBy([ArsipObserver::class])]
 class Arsip extends Model
 {
     use HasFactory, DateFormatCreatedAtAndUpdatedAt;

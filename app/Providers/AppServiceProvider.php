@@ -9,6 +9,10 @@ use App\Services\Arsip\ArsipService;
 use App\Services\Pemohon\PemohonServiceInterface;
 use App\Services\Petugas\PetugasServiceInterface;
 use App\Services\Arsip\ArsipServiceInterface;
+use App\Services\Dashboard\DashboardService;
+use App\Services\Dashboard\DashboardServiceInterface;
+use App\Services\LogProses\LogProsesService;
+use App\Services\LogProses\LogProsesServiceInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
         PetugasServiceInterface::class => PetugasService::class,
         PemohonServiceInterface::class => PemohonService::class,
         ArsipServiceInterface::class => ArsipService::class,
+        LogProsesServiceInterface::class => LogProsesService::class,
+        DashboardServiceInterface::class => DashboardService::class
     ];
 
     /**
