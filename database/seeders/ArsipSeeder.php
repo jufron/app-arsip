@@ -13,6 +13,6 @@ class ArsipSeeder extends Seeder
      */
     public function run(): void
     {
-        Arsip::factory()->count(10)->create();
+        Arsip::factory()->count(10)->createQuietly();
     }
 }

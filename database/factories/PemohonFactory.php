@@ -28,12 +28,16 @@ class PemohonFactory extends Factory
         $userIds = User::pluck('id')->toArray();
         $userId = $this->faker->randomElement($userIds);
 
+        $randomDate = $this->faker->dateTimeBetween('-2 years', 'now');
+
         return [
             'nik'               => $this->faker->unique()->numerify('##########'),
             'nama'              => $this->faker->name(),
             'jenis_pengurusan'  => $this->faker->randomElement(['KTP baru', 'Rusak', "Hilang", "Lainya"]),
             'tanggal_pengurusan'=> $this->faker->dateTimeBetween('-1 year', 'now'),
             'user_id'           => $userId,
+            'created_at'        => $randomDate,
+            'updated_at'        => $randomDate
         ];
     }
 }

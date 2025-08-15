@@ -13,6 +13,6 @@ class PemohonSeeder extends Seeder
      */
     public function run(): void
     {
-        Pemohon::factory()->count(20)->create();
+        Pemohon::factory()->count(20)->createQuietly();
     }
 }

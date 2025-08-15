@@ -24,6 +24,8 @@ class ArsipFactory extends Factory
         $box = ['Box 1', 'Box 2', 'Box 3', 'Box 4', 'Box 5'];
         $ruangan = ['Ruangan 1', 'Ruangan 2', 'Ruangan 3', 'Ruangan 4', 'Ruangan 5'];
 
+        $randomDate = $this->faker->dateTimeBetween('-2 years', 'now');
+
         return [
             'dokumen_pemohon_id'        => $this->faker->randomElement($dokumen_pemohon_id),
             'ruangan'                   => $this->faker->randomElement($ruangan),
@@ -33,6 +35,8 @@ class ArsipFactory extends Factory
             'box'                       => $this->faker->randomElement($box),
             'keterangan'                => $this->faker->sentence,
             'tanggal_arsip'             => $this->faker->date(),
+            'created_at'                => $randomDate,
+            'updated_at'                => $randomDate
         ];
     }
 }
