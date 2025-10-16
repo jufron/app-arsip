@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\FileArsip;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ProfileController;
@@ -28,10 +29,13 @@ Route::middleware('auth')->prefix('dashboard')->group( function () {
 
     Route::get('arsip/fetch', [ArsipController::class, 'getLatest'])->name('dashboard.arsip.fetch');
     Route::get('pemohon/get/{pemohon}', [ArsipController::class, 'getPemohon'])->name('dashboard.pemohon.get');
-    Route::get('fileArsip/donload/{fileArsip}', [ArsipController::class, 'donwloadFile'])->name('dashboard.fileArsip.donwload');
-    Route::delete('fileArsip/{fileArsip}', [ArsipController::class, 'destroyFile'])->name('dashboard.fileArsip.destroy');
     Route::resource('arsip', ArsipController::class)->names('dashboard.arsip');
+    
+    Route::get('fileArsip/download/{id}', [ArsipController::class, 'downloadFile'])
+            ->name('dashboard.fileArsip.download');
 
+    Route::delete('fileArsip/{fileArsip}', [ArsipController::class, 'destroyFile'])->name('dashboard.fileArsip.destroy');
+    
     Route::get('log-aktifitas', [LogProsesController::class, 'index'])->name('dashboard.log-aktifitas.index');
     Route::get('log-aktifitas/fetch', [LogProsesController::class, 'getLatest'])->name('dashboard.log-aktifitas.fetch');
     ROute::get('log-aktifitas/{logProses}', [LogProsesController::class, 'show'])->name('dashboard.log-aktifitas.show');

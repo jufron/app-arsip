@@ -102,9 +102,12 @@ class ArsipController extends Controller
         return redirect()->route('dashboard.arsip.index');
     }
 
-    public function donwloadFile (FileArsip $fileArsip)
+    public function downloadFile (int $id)
     {
-        $this->arsipService->downloadFileArsip($fileArsip);
+        $fileArsip = FileArsip::find($id);
+        return response()->download(
+            storage_path('app/public/' . $fileArsip->nama_file)
+        );
     }
 
     public function destroyFile (FileArsip $fileArsip)

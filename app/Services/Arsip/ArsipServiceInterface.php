@@ -21,7 +21,5 @@ interface ArsipServiceInterface
 
     public function destroyArsip(Arsip $arsip) : void;
 
-    public function downloadFileArsip (FileArsip $fileArsip);
-
     public function destroyFileArsip (FileArsip $fileArsip) : void;
 }

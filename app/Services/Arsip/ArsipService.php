@@ -216,16 +216,6 @@ class ArsipService implements ArsipServiceInterface
         }
     }
 
-    public function downloadFileArsip (FileArsip $fileArsip)
-    {
-        if (Storage::disk('public')->exists($fileArsip->nama_file)) {
-            notify()->success('File Arsip berhasil di download', 'Sukses');
-            return Storage::disk('public')->download($fileArsip->nama_file);
-        }
-
-        notify()->error('File Arsip tidak ditemukan', 'Gagal');
-    }
-
     public function destroyFileArsip (FileArsip $fileArsip) : void
     {
         if ($fileArsip->nama_file && Storage::disk('public')->exists($fileArsip->nama_file)) {

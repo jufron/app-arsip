@@ -96,7 +96,7 @@
                                     @csrf
                                 </form>
 
-                                <a href="{{ route('dashboard.fileArsip.donwload', $file) }}" type="button" class="btn btn-icon btn-round btn-success">
+                                <a href="{{ route('dashboard.fileArsip.download', $file->id) }}" type="button" class="btn btn-icon btn-round btn-success">
                                     <i class="fas fa-download text-white"></i>
                                 </a>
                                 <button id="button-delete" type="button" class="btn btn-icon btn-round btn-danger">
