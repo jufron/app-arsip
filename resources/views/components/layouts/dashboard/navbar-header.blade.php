@@ -213,7 +213,7 @@
                     aria-expanded="false">
                     <div class="avatar-sm">
                     <img
-                        src="{{ asset('img/WhatsApp Image 2025-07-10 at 20.05.25_664a2419.jpg') }}"
+                        src="{{ asset('img/img4-removebg-preview.png') }}"
                         alt="..."
                         class="avatar-img rounded-circle"
                         loading="lazy"
@@ -227,9 +227,9 @@
                             <div class="user-box">
                                 <div class="avatar-lg">
                                     <img
-                                    src="{{ asset('img/WhatsApp Image 2025-07-10 at 20.05.25_664a2419.jpg') }}"
-                                    alt="image profile"
-                                    class="avatar-img rounded"
+                                        src="{{ asset('img/img4-removebg-preview.png') }}"
+                                        alt="image profile"
+                                        class="avatar-img rounded"
                                     />
                                 </div>
                                 <div class="u-text">

@@ -1,7 +1,7 @@
 <div class="logo-header" data-background-color="dark">
     <a href="{{ route('dashboard') }}" class="logo">
       <img
-        src="{{ asset('img/WhatsApp Image 2025-07-10 at 20.05.25_664a2419.jpg') }}"
+        src="{{ asset('img/img4-removebg-preview.png') }}"
         alt="navbar-brand"
         style="margin-left: 70px;"
         width="40"
