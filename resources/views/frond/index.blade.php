@@ -64,16 +64,29 @@
     </nav>
 
     {{-- ? Banner Section  --}}
-    <section class="bg-blue-50 flex items-center py-16" style="height: 80vh;" id="beranda">
-        <div class="container mx-auto px-4 flex flex-col items-center justify-center text-center">
-            <div class="w-full md:w-4/5 lg:w-4/5 mx-auto">
-                <h1 class="text-4xl font-extrabold text-blue-700 mb-4">Pengarsipan Dokumen KTP</h1>
-                <p class="text-lg text-gray-700 mb-6">
+    <section
+        id="beranda"
+        class="relative flex items-center justify-center text-center h-[90vh] bg-cover bg-center bg-no-repeat"
+        style="background-image: url('{{ asset('img/WhatsApp Image 2025-10-16 at 20.15.18.jpeg') }}');"
+        >
+        {{-- Overlay gelap agar teks lebih jelas --}}
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        {{-- Konten teks --}}
+        <div class="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center">
+            <div class="w-full md:w-4/5 lg:w-3/5 mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                    Pengarsipan Dokumen KTP
+                </h1>
+                <p class="text-lg md:text-xl text-gray-100 mb-8">
                     Dinas Kependudukan dan Pencatatan Sipil Kota Kupang.
                 </p>
-                <a href="{{ route('login') }}" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H3m0 0l4-4m-4 4l4 4m13-4a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <a href="{{ route('login') }}"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 12H3m0 0l4-4m-4 4l4 4m13-4a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     Login
                 </a>

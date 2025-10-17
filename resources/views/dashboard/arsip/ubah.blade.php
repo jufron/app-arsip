@@ -216,6 +216,7 @@
                         />
                     </div>
                 </div>
+                <a href="{{ route('dashboard.arsip.index') }}" class="btn btn-secondary my-3">Kembali</a>
                 <button type="submit" class="btn btn-success my-3">Perbaharui</button>
             </form>
         </div>
