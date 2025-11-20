@@ -92,7 +92,7 @@
                     </div>
                     <div>
                         <label
-                        for="password" class="block text-gray-700 text-sm font-semibold mb-1">NIK</label>
+                        for="password" class="block text-gray-700 text-sm font-semibold mb-1">Passowrd</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                                 <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
